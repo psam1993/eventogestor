@@ -3,11 +3,12 @@ import LoginScreen from "./pages/LoginScreen";
 import Dashboard from "./pages/Dashboard";
 import EventForm from "./pages/EventForm";
 import GuestTypeForm from "./pages/GuestTypeForm";
-import GuestForm from "./pages/GuestForm";
+// import GuestForm from "./pages/GuestForm";
 import CheckinList from "./pages/CheckinList";
 import { useState } from "react";
 import { Button } from "./components/ui/button";
-
+import Convidados from "./pages/Convidados";
+import { supabase } from "../utils/supabase";
 export default function App() {
   const [userType, setUserType] = useState<"cerimonial" | "convidado" | null>(null);
 
@@ -47,7 +48,7 @@ return (
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/eventos" element={<EventForm />} />
             <Route path="/tipos" element={<GuestTypeForm />} />
-            <Route path="/convidados" element={<GuestForm />} />
+            <Route path="/convidados" element={<Convidados />} />
             <Route path="/checkin" element={<CheckinList />} />
           </Routes>
         </main>
